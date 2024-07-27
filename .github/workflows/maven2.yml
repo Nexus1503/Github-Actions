@@ -14,15 +14,11 @@ on:
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
-	inputs:
-	inputs:
-		suite-file:
-		description: "Login Test Suite."
-		required: true
-		default: "/FileOperations.xml"
-		type: choice
-		options:
-			- /FileOperations.xml
+    inputs:
+      suite-file:
+        description: "Login feature suite file."
+        required: true
+        default: "/FileOperations.xml"
 
 jobs:
   build:
