@@ -7,7 +7,7 @@ import PageClass.P01_SyncLoginPage;
 
 public class T01_SyncLoginTest extends BaseTest {
 	
-	@Test(priority = 0)
+	@Test(priority = 0, groups= {"Login","P0"})
 	public void signInWithCorrectCredentialsTest() throws InterruptedException {
 		P01_SyncLoginPage lp = new P01_SyncLoginPage(driver);
 		lp.openUrl("https://cp.sync.com");
@@ -37,7 +37,7 @@ public class T01_SyncLoginTest extends BaseTest {
 		Thread.sleep(5000);
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3, groups= {"Login","P0"})
 	public void signoutFromSyncTest() throws InterruptedException {
 		P01_SyncLoginPage lp = new P01_SyncLoginPage(driver);
 		lp.openUrl("https://cp.sync.com");

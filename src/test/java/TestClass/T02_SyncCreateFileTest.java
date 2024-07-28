@@ -8,7 +8,7 @@ import PageClass.P02_SyncCreateFilePage;
 public class T02_SyncCreateFileTest extends BaseTest{
 	
 	
-	@Test(priority = 0)
+	@Test(priority = 0, groups= {"FileOps","P0"})
 	public void validateCreateFileFunctionality() throws InterruptedException {
 		P02_SyncCreateFilePage fp = new P02_SyncCreateFilePage(driver);
 		fp.openUrl("https://cp.sync.com");
@@ -24,7 +24,7 @@ public class T02_SyncCreateFileTest extends BaseTest{
 		Thread.sleep(2000);
 	}
 	
-	@Test(priority =1)
+	@Test(priority =1, groups= {"FileOps","P0"})
 	public void validateDeleteFileFunctionality() throws InterruptedException {
 		P02_SyncCreateFilePage fp = new P02_SyncCreateFilePage(driver);
 		fp.openUrl("https://cp.sync.com");

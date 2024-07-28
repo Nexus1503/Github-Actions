@@ -19,11 +19,13 @@ public class P01_SyncLoginPage{
 	
 	public void openUrl(String url) {
 		driver.get(url);
+		System.out.println("URL opened in the browser.");
 	}
 	public void loginToSyncApp(String uname, String pwd) {
 		driver.findElement(userNameField).sendKeys(uname);
 		driver.findElement(passwordField).sendKeys(pwd);
 		driver.findElement(signInButton).click();
+		System.out.println("Logged in to the Sync app.");
 	}
 	
 	public void enterUsername(String uname) {
