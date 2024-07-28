@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="File Ops">
-	<test name="File Operations Test" parallel="packages" thread-count="5">
+	<test name="File Operations Test" parallel="classes" thread-count="5">
 		<groups>
 			<run>
 				<include name="FileOps" />
 			</run>
 		</groups>
-		<packages>
-			<package name="TestClass"></package>
-		</packages>
+		<classes>
+			<class name="T02_SyncCreateFileTest"></class>
+		</classes>
 	</test> <!--
 	Test -->
 </suite> <!--
