@@ -30,43 +30,52 @@ public class P02_SyncCreateFilePage {
 	
 	public void openUrl(String url) {
 		driver.get(url);
+		System.out.println("Opened url in the browser..");
 	}
 	
 	public void loginToSyncApp(String uname, String pwd) {
 		driver.findElement(userNameField).sendKeys(uname);
 		driver.findElement(passwordField).sendKeys(pwd);
 		driver.findElement(signInButton).click();
+		System.out.println("Logged in to the app.");
 	}
 	
 	public void clickCreateFileLink() {
 		driver.findElement(createFileLink).click();
+		System.out.println("Clicked on create file link..");
 	}
 	
 	public void enterFileName(String fname) {
 		driver.findElement(fileNameField).clear();
 		driver.findElement(fileNameField).sendKeys(fname);
+		System.out.println("Entered file name to be created.");
 	}
 	
 	public void clickCreateFileButton() {
 		driver.findElement(createFileButton).click();
+		System.out.println("Clicked create file button");
 	}
 	
 	public void checkIfFileIsPresent() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		WebElement ele= wait.until(ExpectedConditions.visibilityOfElementLocated(fileElement));
 		System.out.println(ele.getText()); 
+		System.out.println("Validated if the file is present..");
 	}
 	
 	public void clickThreeDots() {
 		driver.findElement(threeDotsElement).click();
+		System.out.println("Clicked on three dots.");
 	}
 	
 	public void clickOnDeleteOption() {
 		driver.findElement(deleteLink).click();
+		System.out.println("Clicked on delete option from three dots.");
 	}
 	
 	public void clickOnDeleteButton() {
 		driver.findElement(deleteButton).click();
+		System.out.println("Clicked on delete button..");
 	}
 	
 }

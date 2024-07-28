@@ -30,21 +30,26 @@ public class P01_SyncLoginPage{
 	
 	public void enterUsername(String uname) {
 		driver.findElement(userNameField).sendKeys(uname);
+		System.out.println("Entered user name.");
 	}
 	
 	public void enterPassword(String pwd) {
 		driver.findElement(passwordField).sendKeys(pwd);
+		System.out.println("Entered Password");
 	}
 	
 	public void clickSignInButton() {
 		driver.findElement(signInButton).click();
+		System.out.println("Clicked sign in button");
 	}
 	
 	public void clickAccountSection() {
 		driver.findElement(accountSection).click();
+		System.out.println("Clicked account profile link..");
 	}
 	
 	public void clickSignOut() {
 		driver.findElement(signOutButton).click();
+		System.out.println("Clicked signin button..");
 	}
 }
