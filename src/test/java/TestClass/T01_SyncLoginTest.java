@@ -37,7 +37,7 @@ public class T01_SyncLoginTest extends BaseTest {
 		Thread.sleep(5000);
 	}
 	
-	@Test(priority = 3, groups= {"Login","P0"})
+	@Test(priority = 3, groups= {"Login"})
 	public void signoutFromSyncTest() throws InterruptedException {
 		P01_SyncLoginPage lp = new P01_SyncLoginPage(driver);
 		lp.openUrl("https://cp.sync.com");

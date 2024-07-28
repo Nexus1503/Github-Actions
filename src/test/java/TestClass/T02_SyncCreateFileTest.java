@@ -24,7 +24,7 @@ public class T02_SyncCreateFileTest extends BaseTest{
 		Thread.sleep(2000);
 	}
 	
-	@Test(priority =1, groups= {"FileOps","P0"})
+	@Test(priority =1, groups= {"FileOps"})
 	public void validateDeleteFileFunctionality() throws InterruptedException {
 		P02_SyncCreateFilePage fp = new P02_SyncCreateFilePage(driver);
 		fp.openUrl("https://cp.sync.com");
