@@ -10,7 +10,7 @@ name: Sync Workflow- Login Feature
 
 on:
   schedule:
-    - cron: '15 17 * * *'
+    - cron: "27 17 * * *"
 
   push:
     branches: [ "master" ]
