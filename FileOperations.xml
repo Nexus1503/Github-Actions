@@ -10,7 +10,7 @@
 
 	<test name="File Operations Test" thread-count="5">
 		<classes>
-			<class name="T02_SyncCreateFileTest"></class>
+			<class name="TestClass.T02_SyncCreateFileTest"></class>
 		</classes>
 	</test> <!--
 	Test -->
