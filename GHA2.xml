@@ -8,12 +8,18 @@
 		</run>
 	</groups>
 
-	<test thread-count="5" name="Test">
+	<!-- <test thread-count="5" name="Test">
 		<classes>
 			<class name="Rough.Class1" />
 			<class name="Rough.Class2" />
 			<class name="Rough.Class3" />
 		</classes>
+	-->
+	
+		<test thread-count="5" name="Test" parallel="packages">
+		<packages>
+			<package name="Rough" />
+		</packages>
 	</test> <!-- Test -->
 </suite> <!--
 Suite -->
