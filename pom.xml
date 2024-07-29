@@ -43,7 +43,7 @@
 				
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>{{*.xml}}</suiteXmlFile>
+						<suiteXmlFile>${xmlFilePath}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
