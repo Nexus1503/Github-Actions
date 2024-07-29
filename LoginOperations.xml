@@ -10,7 +10,7 @@
 
 	<test name="Login feature Test" thread-count="5">
 		<classes>
-			<class name="TestClass.T01_SyncLoginTest"></class>
+			      <class name="TestClass.T01_SyncLoginTest"/>
 		</classes>
 	</test> <!--
 	Test -->

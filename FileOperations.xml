@@ -8,9 +8,15 @@
 		</run>
 	</groups>
 
+	<groups>
+		<run>
+			<include name="SmokeTest" />
+		</run>
+	</groups>
+
 	<test name="File Operations Test" thread-count="5">
 		<classes>
-			<class name="TestClass.T02_SyncCreateFileTest"></class>
+			<class name="TestClass.T02_SyncCreateFileTest" />
 		</classes>
 	</test> <!--
 	Test -->
