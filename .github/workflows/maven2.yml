@@ -10,7 +10,7 @@ name: Sync Workflow- File Ops Feature
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '* 18 * * *'
   push:
     branches: [ "master" ]
   pull_request:
