@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Sync Workflow- File Operations Feature
+name: Sync Workflow- File Ops Feature
 
 on:
   schedule:
