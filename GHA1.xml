@@ -16,17 +16,19 @@
 		</classes>
 		-->
 
-	<test thread-count="5" name="Test" parallel="packages">
+	<test thread-count="5" name="Test" parallel="classes">
 
 		<groups>
 			<run>
+				<exclude name="Class1"></exclude>
 				<exclude name="Class2"></exclude>
-				<include name="Class2"></include>
 			</run>
 		</groups>
-		<packages>
-			<package name="Rough" />
-		</packages>
+		<classes>
+			<class name="Rough.Class1" />
+			<class name="Rough.Class2" />
+			<class name="Rough.Class3" />
+		</classes>
 	</test> <!-- Test -->
 </suite> <!--
 Suite -->
