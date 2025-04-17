@@ -6,11 +6,11 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Sync Workflow:- Login Feature
+name: Sync Workflow- Login Feature
 
 on:
   schedule:
-    - cron: '* 19 * * *'
+    - cron: '* * 01 * *'
   push:
     branches: [ "master" ]
   pull_request:
