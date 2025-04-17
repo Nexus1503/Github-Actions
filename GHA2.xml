@@ -18,12 +18,12 @@
 
 	<test thread-count="5" name="Test" parallel="classes">
 
-		<groups>
+		<!--<groups>
 			<run>
 				<exclude name="Class3"></exclude>
-				<!-- <include name="Class2"></include> -->
+				<include name="Class2"></include>
 			</run>
-		</groups>
+		</groups> -->
 		<classes>
 			<class name="Rough.Class1" />
 			<class name="Rough.Class2" />

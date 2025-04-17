@@ -17,7 +17,7 @@ public class T01_SyncLoginTest extends BaseTest {
 		Thread.sleep(5000);
 	}
 	
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	public void signInWithIncorrectPasswordTest() throws InterruptedException {
 		P01_SyncLoginPage lp = new P01_SyncLoginPage(driver);
 		lp.openUrl("https://cp.sync.com");
@@ -27,7 +27,7 @@ public class T01_SyncLoginTest extends BaseTest {
 		Thread.sleep(5000);
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2)
 	public void signInWithIncorrectUsernameTest() throws InterruptedException {
 		P01_SyncLoginPage lp = new P01_SyncLoginPage(driver);
 		lp.openUrl("https://cp.sync.com");

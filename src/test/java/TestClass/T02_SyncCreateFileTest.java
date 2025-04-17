@@ -16,7 +16,7 @@ public class T02_SyncCreateFileTest extends BaseTest{
 		Thread.sleep(2000);
 		fp.clickCreateFileLink();
 		Thread.sleep(2000);
-		fp.enterFileName("abcd");
+		fp.enterFileName("abcde");
 		Thread.sleep(2000);
 		fp.clickCreateFileButton();
 		Thread.sleep(2000);
