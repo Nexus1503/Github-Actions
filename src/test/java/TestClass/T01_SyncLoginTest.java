@@ -24,6 +24,7 @@ public class T01_SyncLoginTest extends BaseTest {
 		lp.enterUsername("sandipthopate1414+test@gmail.com");
 		lp.enterPassword("asdf1234123");
 		lp.clickSignInButton();
+		lp.validateErrorMessage();
 		Thread.sleep(5000);
 	}
 	
