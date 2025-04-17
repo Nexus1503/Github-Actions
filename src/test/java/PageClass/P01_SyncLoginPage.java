@@ -2,6 +2,7 @@ package PageClass;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class P01_SyncLoginPage{
 	
@@ -15,6 +16,7 @@ public class P01_SyncLoginPage{
 	By signInButton = By.id("btn-auth-login");
 	By accountSection = By.xpath("//span[contains(text(),'sandipthopate1414+test@gmail.com')]");
 	By signOutButton = By.xpath("//a[text()='Sign out']");
+	By errorText = By.xpath("//div[contains(text(),\" 6001 Incorrect login credentials\")]");
 
 	
 	public void openUrl(String url) {
@@ -51,5 +53,11 @@ public class P01_SyncLoginPage{
 	public void clickSignOut() {
 		driver.findElement(signOutButton).click();
 		System.out.println("Clicked signin button..");
+	}
+	public void validateErrorMessage() {
+		String actualMessage=driver.findElement(errorText).getText();
+		System.out.println(actualMessage);
+		Assert.assertEquals(actualMessage, "6001 Incorrect login credentials");
+		System.out.println("Error Message display successfully");
 	}
 }
