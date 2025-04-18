@@ -29,6 +29,8 @@ public class P03_SyncFolderPage {
 	String deleteDropdownOptionXpathStart ="//a[@title='";
 	String deleteDropdownOptionXpathEnd ="']/ancestor::tr//a[@id='delete-file-btn']";
 	
+	String restoreDropdownButtonXpathSart = "//a[@title='";
+	String restoreDropdownButtonXpathEnd = "']/ancestor::tr//a[@id='restore-file-btn']";	
 	
 	By userNameField = By.id("text-auth-email");
 	By passwordField = By.id("text-auth-password");
@@ -40,6 +42,9 @@ public class P03_SyncFolderPage {
 	By folderRenameField = By.xpath("//input[@id='path-rename-text']");
 	By renameButton = By.xpath("//button[@id='path-rename-btn']");
 	By deleteDialogButton = By.xpath("//button[@id='delete-dialog-btn']");
+	By showDeletedFiles = By.xpath("//a[@id='deleted-files-btn']");
+	//By restoreDropdownButton = By.xpath("restore-file-btn");
+	By comformRestoreButton = By.xpath("//button[@id='restore']");
 		
 	
 	public void openUrl(String url) {
@@ -115,6 +120,20 @@ public class P03_SyncFolderPage {
 		System.out.println("Clicked on delete button Dialog(comform delete option)");
 	}
 	
+	public void clickShowDeletedFilesButton() {
+		driver.findElement(showDeletedFiles).click();
+		System.out.println("Clicked on show deleted files button.");
+	}
 	
+	public void clickRestoreDropdownButton(String folderName) {
+		By restoreDropdownButton = By.xpath(restoreDropdownButtonXpathSart+folderName+restoreDropdownButtonXpathEnd);
+		driver.findElement(restoreDropdownButton).click();
+		System.out.println("clicked restore dropdown Button");
+	}
+	
+	public void clickConfirmRestoreButton() {
+		driver.findElement(comformRestoreButton).click();
+		System.out.println("clicked on comform restore button");
+	}
      
 }

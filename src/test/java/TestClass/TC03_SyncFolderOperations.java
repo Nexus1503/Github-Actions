@@ -59,4 +59,20 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		fp.clickConfirmDeleteDialogButton();
 		Thread.sleep(2000);
 	}
+	
+	@Test(priority =3, groups= {"FolderOps"})
+	public void validateRestoreFolderFunctionality()throws InterruptedException{
+		P03_SyncFolderPage fp = new P03_SyncFolderPage(driver);
+		fp.openUrl("https://cp.sync.com");
+		fp.loginToSyncApp("sandipthopate1414+test@gmail.com","asdf1234");
+		Thread.sleep(2000);
+		fp.clickShowDeletedFilesButton();
+		Thread.sleep(2000);
+		fp.clickFolderThreeDotsDropdown("xyz");
+		Thread.sleep(2000);
+		fp.clickRestoreDropdownButton("xyz");
+		Thread.sleep(2000);
+		fp.clickConfirmRestoreButton();
+		Thread.sleep(2000);
+	}
 }
