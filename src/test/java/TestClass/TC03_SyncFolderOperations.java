@@ -24,7 +24,7 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		
 	}
 	
-	@Test(priority =1, groups= {"FolderOps","P0"})
+	@Test(priority =1, groups= {"FolderOps"})
 	public void validateRenameFolderFunctionality()throws InterruptedException{
 		P03_SyncFolderPage fp = new P03_SyncFolderPage(driver);
 		fp.openUrl("https://cp.sync.com");
@@ -41,6 +41,22 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		fp.clickRenameButton();
 		Thread.sleep(2000);
 		fp.checkFolderIsPresent("abcde");
+		Thread.sleep(2000);
+	}
+	
+	@Test(priority =3, groups= {"FolderOps"})
+	public void validateDeleteFolderFunctionality()throws InterruptedException{
+		P03_SyncFolderPage fp = new P03_SyncFolderPage(driver);
+		fp.openUrl("https://cp.sync.com");
+		fp.loginToSyncApp("sandipthopate1414+test@gmail.com","asdf1234");
+		Thread.sleep(2000);
+		fp.checkFolderIsPresent("xyz");
+		Thread.sleep(2000);
+		fp.clickFolderThreeDotsDropdown("xyz");
+		Thread.sleep(2000);
+		fp.clickDeleteFileDropdownButton("xyz");
+		Thread.sleep(2000);
+		fp.clickConfirmDeleteDialogButton();
 		Thread.sleep(2000);
 	}
 }

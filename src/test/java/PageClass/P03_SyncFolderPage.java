@@ -26,6 +26,9 @@ public class P03_SyncFolderPage {
 	String renameDropdownOptionXpathStart ="//a[@title='";
 	String renameDropdownOptionXpathEnd ="']/ancestor::tr//a[@id='context-menu-rename']";
 	
+	String deleteDropdownOptionXpathStart ="//a[@title='";
+	String deleteDropdownOptionXpathEnd ="']/ancestor::tr//a[@id='delete-file-btn']";
+	
 	
 	By userNameField = By.id("text-auth-email");
 	By passwordField = By.id("text-auth-password");
@@ -36,6 +39,7 @@ public class P03_SyncFolderPage {
 	By addFolderButton = By.xpath("//button[@id='new-folder-add-btn']");
 	By folderRenameField = By.xpath("//input[@id='path-rename-text']");
 	By renameButton = By.xpath("//button[@id='path-rename-btn']");
+	By deleteDialogButton = By.xpath("//button[@id='delete-dialog-btn']");
 		
 	
 	public void openUrl(String url) {
@@ -99,5 +103,18 @@ public class P03_SyncFolderPage {
 		driver.findElement(renameButton).click();
 		System.out.println("clicked rename button");
 	}
+	
+	public void clickDeleteFileDropdownButton(String folderName) {
+		By daleteDropdownOption = By.xpath(deleteDropdownOptionXpathStart+folderName+deleteDropdownOptionXpathEnd);
+		driver.findElement(daleteDropdownOption).click();
+		System.out.println("Clicked on delete dropdown option.");
+	}
+	
+	public void clickConfirmDeleteDialogButton() {
+		driver.findElement(deleteDialogButton).click();
+		System.out.println("Clicked on delete button Dialog(comform delete option)");
+	}
+	
+	
      
 }
