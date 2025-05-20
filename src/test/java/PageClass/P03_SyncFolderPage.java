@@ -3,10 +3,12 @@ package PageClass;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class P03_SyncFolderPage {
 	
@@ -80,8 +82,22 @@ public class P03_SyncFolderPage {
 		By folderElement = By.xpath(folderElementXpathStart+folderName+folderElementXpathEnd);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		WebElement ele= wait.until(ExpectedConditions.visibilityOfElementLocated(folderElement));
-		System.out.println(ele.getText()); 
+		System.out.println(ele.getText());
+		Assert.assertEquals(folderName, ele.getText());	
 		System.out.println("Validated if the folder is present..");
+	}
+	
+	public Boolean isFolderPresent(String folderName) {
+		Boolean flag = false;
+		try {
+			By folderElement = By.xpath(folderElementXpathStart+folderName+folderElementXpathEnd);
+			driver.findElement(folderElement);
+			flag = true;
+			System.out.println("Validated if the folder is present..");
+		}catch(NoSuchElementException e) {
+			System.out.println("Folder is not present.");
+		}
+		return flag;
 	}
 	
 	public void clickFolderThreeDotsDropdown(String folderName) {
@@ -123,6 +139,11 @@ public class P03_SyncFolderPage {
 	public void clickShowDeletedFilesButton() {
 		driver.findElement(showDeletedFiles).click();
 		System.out.println("Clicked on show deleted files button.");
+	}
+	
+	public void clickHideDeletedFilesButton() {
+		driver.findElement(showDeletedFiles).click();
+		System.out.println("Clicked on hide deleted files button.");
 	}
 	
 	public void clickRestoreDropdownButton(String folderName) {

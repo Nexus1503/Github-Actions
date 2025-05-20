@@ -5,14 +5,10 @@
 	<groups>
 		<run>
 			<include name="FileOps" />
-		</run>
-	</groups>
-
-	<groups>
-		<run>
 			<include name="SmokeTest" />
 		</run>
 	</groups>
+
 
 	<test name="File Operations Test" thread-count="5">
 		<classes>

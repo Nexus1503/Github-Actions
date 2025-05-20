@@ -1,5 +1,10 @@
 package TestClass;
 
+import org.testng.Assert;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
+
 import org.nexus.base.BaseTest;
 import org.testng.annotations.Test;
 
@@ -19,8 +24,8 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		Thread.sleep(2000);
 		fp.clickAddFolderButton();
 		Thread.sleep(2000);
-		fp.checkFolderIsPresent("abcde");
-		Thread.sleep(2000);
+		Boolean isFolderPresent = fp.isFolderPresent("abcde");
+		Assert.assertTrue(isFolderPresent,"Test Failed:Folder 'abcde' is not created successfully.");
 		
 	}
 	
@@ -40,8 +45,8 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		Thread.sleep(2000);
 		fp.clickRenameButton();
 		Thread.sleep(2000);
-		fp.checkFolderIsPresent("abcde");
-		Thread.sleep(2000);
+		Boolean isFolderRenamed = fp.isFolderPresent("abcdef");
+		Assert.assertTrue(isFolderRenamed,"Test Failed:Folder was not reamed successfully.");
 	}
 	
 	@Test(priority =3, groups= {"FolderOps"})
@@ -58,6 +63,9 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		Thread.sleep(2000);
 		fp.clickConfirmDeleteDialogButton();
 		Thread.sleep(2000);
+		Boolean isFolderPresent = fp.isFolderPresent("xyz");
+		Assert.assertEquals(false, isFolderPresent,"Test Failed:File is not deleted successfully.");
+		
 	}
 	
 	@Test(priority =3, groups= {"FolderOps"})
@@ -74,5 +82,9 @@ public class TC03_SyncFolderOperations extends BaseTest{
 		Thread.sleep(2000);
 		fp.clickConfirmRestoreButton();
 		Thread.sleep(2000);
+		fp.clickHideDeletedFilesButton();
+		Thread.sleep(2000);
+		Boolean isFolderPresent = fp.isFolderPresent("xyz");
+		Assert.assertTrue(isFolderPresent,"Test Failed:Folder 'xyz' is not restored successfully.");
 	}
 }
